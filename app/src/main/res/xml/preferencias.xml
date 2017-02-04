@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- By -ACA- 28/01/2017 - Preferencias de Configuración-->
+
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android" >
+    <PreferenceCategory android:title="Datos Personales">
+        <EditTextPreference android:title="Nombre de Usuario"
+            android:key="nombre_usuario"
+            android:summary="Por favor, ingrese su nombre de usuario."
+            android:dialogTitle="Introduce Nombre">
+        </EditTextPreference>
+        <EditTextPreference android:title="Email"
+            android:key="email_usuario"
+            android:summary="Por favor, ingrese su correo electrónico."
+            android:dialogTitle="Introduce Email">
+        </EditTextPreference>
+    </PreferenceCategory>
+    <PreferenceCategory android:title="Asocie un Ringtone">
+        <CheckBoxPreference
+        android:defaultValue="false"
+        android:title="Ringtone de Notificación"
+        android:key="check_box_preference_1"
+        android:summary="Por favor, ingrese su correo electrónico.">
+    </CheckBoxPreference>
+
+        <!-- RingtonePreference comienza deshabilitado, HABILITARLO al tildar el CheckBoxPreference -->
+    <RingtonePreference
+        android:defaultValue="defaultRingtone"
+        android:key="ringtone"
+        android:title="RingTones"
+        android:name="RingtonePreference"
+        android:showSilent="false"
+        android:ringtoneType="notification"
+        android:summary="Selecciona un Tono">
+    </RingtonePreference>
+
+    </PreferenceCategory>
+
+</PreferenceScreen>

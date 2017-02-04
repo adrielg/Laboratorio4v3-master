@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--DrawerLayout: contenedor especial de la librería de soporte, que alberga dos tipos de contenido,
+    el contenido principal y el contenido para el Navigation Drawer -->
+<android.support.v4.widget.DrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:openDrawer="start"><!--tools:context=".MainActivity"-->
+
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <!--El primer miembro debe ser el layout que representará el contenido principal-->
+    <!--es decir, el contenedor que veremos en la actividad normalmente -->
+    <include
+        layout="@layout/app_bar_main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <!-- MENÚ DESLIZANTE -->
+    <!--El segundo miembro es el componente que representará el Drawer-->
+    <!--es decir, aquel View que veremos cuando se despliegue el Navigation Drawer (donde frecuentemente se usa un ListView o Recycler View), con varias opciones de selección -->
+    <!--pero, usamos el NavigationView que hace que la construcción de un menú deslizante sea sencilla y aislada -->.
+    <!-- y que consiste en variar el contenido principal basado en fragmentos-->
+    <android.support.design.widget.NavigationView
+        android:id="@+id/nav_view"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:fitsSystemWindows="true"
+        app:headerLayout="@layout/nav_header_main"
+        app:menu="@menu/activity_main_drawer" />
+
+</android.support.v4.widget.DrawerLayout>
+
+
+
+
+
+
+
+ <!--
+ ¿Cómo Añadir El NavigationView En Android?
+
+    En el apartado del NavigationView de la librería de soporte nos indica que el navigation drawer debe ser construido a partir de:
+
+    -Un layout con un nodo DrawerLayout, el cual tendrá dos hijos. El contenido principal y un NavigationView.
+    -Un layout para el header. Este elemento es opcional.
+    -Un menú para inflar las opciones de la lista.
+
+
+ Recordar tener en cuenta los siguientes puntos claves:
+
+    -Usar el atributo fitsSystemWindows con el valor de true para ajustar el DrawerLayout y el NavigationView al padding de la status bar de android.
+    -Asignar al atributo headerLayout el layout que ocupará el espacio del header, si es que usamos uno.
+    -Asignar al atributo menu del NavigationView el menú con las opciones correspondientes.
+
+
+ En cuanto a control de eventos e interacción con el sistema tener en cuenta:
+
+    -Añadir la Toolbar a la aplicación Android para que el navigation drawer aparezca sobre la Action Bar como dice la regla #1.
+    -Añadir una escucha OnNavigationItemSelectedListener a tu NavigationView para manejar las selecciones de los ítems.
+    -Sobreponer la status bar al navigation drawer como dice la regla #1. Para ello añadir a res/values-21 los siguientes atributos:
+
+            <style name="TuTema" parent="Theme.AppCompat.Light.NoActionBar">
+                <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+                <item name="android:statusBarColor">@android:color/transparent</item>
+            </style>
+
+ -->

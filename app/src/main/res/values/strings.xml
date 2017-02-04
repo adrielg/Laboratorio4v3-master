@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Filtrados</string>
+    <string name="app_name2">Reservados</string>
+    <string name="app_name3">Ayuda</string>
+    <string name="title_activity_main2">Reservalo.com</string>
+
+    <string name="navigation_drawer_open">Mostrar Opciones</string>
+    <string name="navigation_drawer_close">Ocultar Opciones</string>
+
+    <string name="action_settings">Configuracion</string>
+    <string name="Reservar">Reservar</string>
+    <string name="Ayuda">Ayuda</string>
+    <string name="Salir">Salir</string>
+</resources>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="dam.isi.frsf.utn.edu.ar.laboratorio4v2">
+
+    <!-- PERMISOS para cuando invocamos un video de YOUTUBE en pestaña AYUDA-->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="Laboratorio04"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/title_activity_main2"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".OpcionesActivity"
+            android:label="Opciones">
+        </activity>
+        <activity
+            android:name=".ListaDepartamentosActivity"
+            android:label="@string/app_name">
+        </activity>
+        <activity
+            android:name=".AltaReservaActivity"
+            android:label="@string/app_name2">
+        </activity>
+        <activity
+            android:name=".AyudaActivity"
+            android:label="@string/app_name3">
+        </activity>
+        <receiver
+            android:name=".PendientesReceiver"/>
+    </application>
+
+</manifest>

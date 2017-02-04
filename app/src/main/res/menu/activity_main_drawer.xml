@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- menú del Navegador propiamente dicho -->
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!--En este caso cada ítem tiene un identificador, un titulo y un icono asignado
+    y se agrupan por una etiqueta <group> para mantener el control sobre la selección.-->
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_deptos"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="Departamentos" />
+        <item
+            android:id="@+id/nav_ofertas"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="Ofertas" />
+        <item
+            android:id="@+id/nav_destinos"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="Destinos" />
+    </group>
+
+    <!-- Se usa un menú anidado para crear una división visible entre los elementos -->
+    <item android:title="Usuario">
+        <menu>
+            <item
+                android:id="@+id/nav_reservas"
+                android:icon="@drawable/ic_menu_gallery"
+                android:title="Reservas" />
+            <item
+                android:id="@+id/nav_perfil"
+                android:icon="@drawable/ic_menu_manage"
+                android:title="Perfil" />
+        </menu>
+    </item>
+
+</menu>
